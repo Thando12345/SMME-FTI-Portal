@@ -85,5 +85,5 @@ flask db upgrade
 ### 6. Start the Application
 Launch the Flask application. The application will be accessible at `http://127.0.0.1:5000`:
 ```bash
-flask run
+ python app.py
 
