@@ -49,19 +49,3 @@
 
 
 
-//
-
-<h3 class="card-title"><i class="fas fa-money-check-alt fa-2x"></i> Loan Application</h3>
-<p>Apply directly for loans with AI-driven credit scoring based on your business profile and needs. Our streamlined process ensures you receive timely feedback on your application.</p>
-<ul class="list-unstyled text-left">
-    <li><i class="fas fa-check-circle"></i> Fill out the loan application form with your business details.</li>
-    <li><i class="fas fa-check-circle"></i> Upload necessary documents (e.g., financial statements, identification).</li>
-    <li><i class="fas fa-check-circle"></i> Receive AI-generated credit scores to help guide your application.</li>
-    <li><i class="fas fa-check-circle"></i> Get notifications about your application status directly through the portal.</li>
-</ul>
-<button class="btn btn-primary" data-toggle="collapse" data-target="#loanForm">Apply Now</button>
-<div id="loanForm" class="collapse">
-    <form method="POST" action="/predict" enctype="multipart/form-data" class="mt-3">
-        <input type="file" id="file" name="file" required class="form-control" placeholder="Upload Documents">
-        <button class="btn btn-primary mt-3">Submit Application</button>
-    </form>
