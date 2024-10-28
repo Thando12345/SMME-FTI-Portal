@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMME Financial Technology Inclusion (FTI) Portal</title>
+    <!-- CSS and JS Libraries -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Theme Color Styles */
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            background: linear-gradient(to bottom right, #0a4d68, #014f4a);
+        }
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: #fff;
+        }
+        .text-highlight {
+            color: #ffd700;
+        }
+        .btn-primary, .btn-outline-primary {
+            background-color: #014f4a;
+            border-color: #ffd700;
+            color: #ffd700;
+        }
+        .btn-primary:hover, .btn-outline-primary:hover {
+            background-color: #ffd700;
+            color: #014f4a;
+        }
+        .card {
+            background-color: #fefefe;
+            border: 1px solid #e3e3e3;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .role-section {
+            display: none; /* Hide all role-based sections initially */
+        }
+        .dynamic-header {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Dynamic Header Section -->
+    <section class="container text-center mt-5">
+        <h1 class="display-4 dynamic-header">Empowering <span class="text-highlight">SMMEs in Underserved Communities</span></h1>
+        <p class="lead dynamic-header">A tested MVP supporting financial access, educational growth, and market insights for transformative impact.</p>
+    </section>
+
+    <!-- Role-Based Access Control (RBAC) Section -->
+    <section id="role-selection" class="container text-center mt-5">
+        <h2 class="text-white">Select Your Role</h2>
+        <div class="btn-group mt-3">
+            <button class="btn btn-primary" onclick="setRole('Admin')">Admin</button>
+            <button class="btn btn-outline-primary" onclick="setRole('User')">User</button>
+            <button class="btn btn-outline-primary" onclick="setRole('Guest')">Guest</button>
+        </div>
+        <p id="role-display" class="text-highlight mt-3">Selected Role: <span id="role-name">None</span></p>
+    </section>
+
+    <!-- Features Section with Role-Based Access -->
+    <section id="features" class="container my-5">
+        <h2 class="text-center text-white mb-5">Core Functionalities of the FTI Portal</h2>
+        <div class="row">
+            <!-- Admin-Only Feature -->
+            <div class="col-md-4 mb-4 role-section" id="admin-section">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3 class="card-title"><i class="fas fa-tools fa-2x"></i> Admin Dashboard</h3>
+                        <p>Access advanced settings, user management, and reporting tools.</p>
+                        <button class="btn btn-outline-primary">Go to Admin Dashboard</button>
+                    </div>
+                </div>
+            </div>
+            <!-- User Feature -->
+            <div class="col-md-4 mb-4 role-section" id="user-section">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3 class="card-title"><i class="fas fa-wallet fa-2x"></i> User Digital Wallet</h3>
+                        <p>Manage your transactions and track finances with our secure digital wallet.</p>
+                        <a href="/wallet" class="btn btn-outline-primary">Access Wallet</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Guest and User Feature -->
+            <div class="col-md-4 mb-4 role-section" id="guest-section">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <h3 class="card-title"><i class="fas fa-info-circle fa-2x"></i> Guest Information</h3>
+                        <p>Explore the platform and learn more about its features as a guest user.</p>
+                        <button class="btn btn-outline-primary">Learn More</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Loan Application Feature (Available for All Roles) -->
+            <div class="col-md-12 mb-4">
+                <div class="card">
+                    <div class="card-body text-center">
+                        <h3 class="card-title"><i class="fas fa-money-check-alt fa-2x"></i> Loan Application</h3>
+                        <p>Apply directly for loans with AI-driven credit scoring based on your business profile and needs. Our streamlined process ensures timely feedback on your application.</p>
+                        <ul class="list-unstyled text-left">
+                            <li><i class="fas fa-check-circle"></i> Fill out the loan application form with your business details.</li>
+                            <li><i class="fas fa-check-circle"></i> Upload necessary documents (e.g., financial statements, identification).</li>
+                            <li><i class="fas fa-check-circle"></i> Receive AI-generated credit scores to help guide your application.</li>
+                            <li><i class="fas fa-check-circle"></i> Get notifications about your application status directly through the portal.</li>
+                        </ul>
+                        <button class="btn btn-primary" data-toggle="modal" data-target="#uploadModal">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal for File Upload -->
+    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="uploadModalLabel">Loan Application - Document Upload</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="loanApplicationForm" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <input type="file" id="file" name="file" required class="form-control" placeholder="Upload Documents">
+                        <small class="form-text text-muted">Upload financial statements and identification documents.</small>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
+                    </div>
+                </form>
+                <div id="creditScoreResult" class="alert alert-info mt-3" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Role-Based Access Control -->
+    <script>
+        let userRole = 'Guest';
+
+        function setRole(role) {
+            userRole = role;
+            document.getElementById('role-name').innerText = role;
+            displaySections();
+        }
+
+        function displaySections() {
+            document.querySelectorAll('.role-section').forEach(section => {
+                section.style.display = 'none';
+            });
+            if (userRole === 'Admin') {
+                document.getElementById('admin-section').style.display = 'block';
+                document.getElementById('user-section').style.display = 'block';
+                document.getElementById('guest-section').style.display = 'block';
+            } else if (userRole === 'User') {
+                document.getElementById('user-section').style.display = 'block';
+                document.getElementById('guest-section').style.display = 'block';
+            } else if (userRole === 'Guest') {
+                document.getElementById('guest-section').style.display = 'block';
+            }
+        }
+        window.onload = displaySections;
+    </script>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
