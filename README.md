@@ -1,134 +1,89 @@
-# Madclub-Decentralized-Credit-Scoring-System
-🌟 Decentralized Credit Scoring System 🌟
-Welcome to the Decentralized Credit Scoring System project! This innovative solution leverages blockchain technology to provide a transparent, secure, and immutable credit scoring mechanism. Our system integrates various data sources through APIs to gather and validate comprehensive financial and non-financial data, ensuring accurate credit assessments.
+# SMME Financial Technology Inclusion (FTI) Portal
 
-🚀 Project Overview
-The Decentralized Credit Scoring System offers a user-friendly interface with real-time updates, providing users with insights into their credit scores and financial health. By addressing the limitations of traditional credit scoring models, our system offers a decentralized, transparent, and efficient solution.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Status](https://img.shields.io/badge/status-MVP-orange.svg)
 
-## 1. Clone the Repository
+## Description
+This repository contains the code for the **SMME Financial Technology Inclusion (FTI) Portal**, a Minimum Viable Product (MVP) aimed at empowering small, medium, and micro enterprises (SMMEs) in underserved communities. This portal enhances access to essential financial services, educational resources, and market insights, supporting economic growth and digital inclusion.
 
-git clone <repository-url>
-cd decentralized-credit-scoring-system
-
-git clone https://github.com/Tharak23/decentralized-credit-scoring.git
-cd decentralized-credit-scoring
-
-
-## ⚙️ Installation & Setup in broser
-
-Follow these steps to set up and run the project.
-
-1. Install Flask Install Flask to create the web application.
-- pip install flask
-
-2. Install Required Libraries
-Install the necessary libraries including Pandas, Scikit-learn, Joblib, and Web3.
-- pip install pandas scikit-learn joblib web3
-
-4. Generate Sample Data
-Run the generate_credit_data.py script to create sample credit data.
-- python generate_credit_data.py
-
-4. Train the Model
-Run the train_model.py script to train the machine learning model on the generated data.
-- python train_model.py
-
-6. Start the Web Application
-Run the app.py script to start the Flask web application.
-- python app.py
-
-6. Open the Application in a Browser
-After starting the Flask application, open your web browser and navigate to the URL provided by Flask.
-
-7. Download the user_data.csv File
-Download the user_data.csv file from the repository. This file contains the data you will use to predict credit scores.
-
-8. Upload the CSV File
-In the web application, use the provided interface to upload the user_data.csv file.
-
-9. Predict Credit Score
-Click on the "Predict Credit Score" button. The system will use the uploaded data to predict the credit scores.
-
-10. View the Credit Scores
-The predicted credit scores will be displayed on the web page.
-
-11. Edit and Experiment with Data
-You can edit the data in user_data.csv or upload a new CSV file to experiment with different inputs and see how they affect the predicted credit scores.
-📝 Features
-
-🔒 Data Security & Privacy: Blockchain technology ensures data is secure and immutable.
-
-🌐 Comprehensive Data Integration: APIs gather and validate data from multiple sources.
-
-📊 Accurate Credit Assessments: Holistic view of creditworthiness using financial and non-financial data.
-
-💡 Real-Time Updates: Users receive instant insights into their credit scores.
-
-🔗 Transparent & Decentralized: Eliminates the need for centralized credit bureaus.
-
-📈 Future Plans
-
-
-## Expand Data Sources: Integrate more data points to enhance credit assessment accuracy.
-AI Integration: Implement AI algorithms to provide predictive analytics and personalized financial advice.
-Global Expansion: Adapt the system to various countries and regions for broader adoption.
-User Education: Develop educational resources to help users understand and improve their credit scores.
-
-## 🛠️ Technology Stack
-Backend: Python, Flask
-Frontend: JavaScript, React
-Blockchain: Solidity, Ethereum
-Database: PostgreSQL
-APIs: Various financial and non-financial data sources
-
-# Decentralized Credit Scoring System
-
-## Introduction
-This project is a decentralized credit scoring system built using Flask for the backend, React for the frontend, and Solidity for the smart contracts. The project integrates external APIs to gather financial and non-financial data to calculate credit scores stored on the blockchain for transparency and security.
-
-## Technology Stack
-- **Frontend**: React
-- **Backend**: Flask
-- **Blockchain**: Solidity, Web3, Truffle
-- **Database**: SQLite (for initial prototyping)
+## MVP Summary
+The SMME Financial Technology Inclusion (FTI) Portal is designed to provide a scalable platform that supports financial access and educational growth for SMMEs. By integrating core functionalities such as digital wallets, user role management, and educational resources, this MVP serves as a vital tool for fostering economic empowerment and driving transformative impact within communities.
 
 ## Features
-- User registration and login
-- Credit score calculation
-- Integration with external APIs
-- Decentralized data storage on the blockchain
+- **Admin Dashboard**: Access advanced settings, user management, and reporting tools.
+- **User Digital Wallet**: Securely manage financial transactions and track balances with ease.
+- **Guest Information Access**: Allows guest users to explore the platform's resources and understand its features.
+- **Role-Based Access**: Users select their role (Admin, User, Guest) for customized access to platform features.
+- **Educational Resources**: Comprehensive resources designed to increase financial literacy and promote informed decision-making.
 
-## Setup Instructions
+## Comprehensive Flow
+1. **User Role Selection**: Users select their role (Admin, User, or Guest) on the homepage for customized functionality.
+2. **Dynamic Feature Display**:
+   - **Admin**: Access to the Admin Dashboard, user management, and reporting tools.
+   - **User**: Access to the Digital Wallet, allowing financial management and transaction tracking.
+   - **Guest**: View informational resources without the need to sign up.
+3. **Financial Access and Management**: Through the Digital Wallet, users can view and manage their financial transactions.
+4. **Data Management**: Admins can monitor user activities, manage documents, and analyze data through built-in reporting tools.
+5. **Educational Resources**: All users have access to financial literacy resources that cover various topics, from budgeting to investment.
 
-## Prerequisites
-- [Node.js](https://nodejs.org/) and npm
-- [Python](https://www.python.org/)
-- [Truffle](https://www.trufflesuite.com/truffle)
-- [Ganache](https://www.trufflesuite.com/ganache)
+## Technologies Used
+This project integrates a range of technologies for both frontend and backend functionalities:
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap, Font Awesome
+- **Backend**: Flask for API development and server-side logic
+- **Data Handling and Machine Learning**: Pandas, Scikit-learn, Joblib, and Web3 for data processing and model deployment
 
-📂 Project Structure
+## Installation & Setup
+Follow these steps to set up and run the project on your local environment.
 
-backend/: Contains the Flask backend code.
+### Prerequisites
+- Python 3.8+
+- pip (Python package installer)
 
-frontend/: Contains the React frontend code.
+### Steps
 
-contracts/: Contains the Solidity smart contracts.
+#### 1. Clone the Repository
+Clone this repository to your local machine:
+```bash
+git clone https://github.com/Thando12345/SMME-FTI-Portal.git
+cd SMME-FTI-Portal
 
-migrations/: Database migration files.
 
-tests/: Test cases for the backend and contracts.
+### 2. Create a Virtual Environment
+Set up a virtual environment to manage project dependencies. This isolates the dependencies of this project from others on your system.
 
-## USE THIS FILE FOR TESTING 
+```bash
+python3 -m venv env
+source env/bin/activate  # For Windows: env\Scripts\activate
 
-credit_data.csv
+### 3. Install Flask and Other Dependencies
+Install Flask and other required packages. If a `requirements.txt` file is available, use it to install dependencies in bulk; otherwise, install each dependency individually.
 
-🌍 Contributing
-We welcome contributions from the community! Please fork the repository and submit pull requests.
+**Using requirements.txt:**
+```bash
+pip install -r requirements.txt
 
-📝 License
-This project is licensed under the MIT License.
 
-📞 Contact
-If you have any questions or feedback, please reach out to us at tharak.nagaveti@gmail.com
+### 4. Set Up Environment Variables
+To securely configure the application, create a `.env` file in the project’s root directory. This file will store necessary environment variables.
 
+**Sample .env Configuration:**
+```makefile
+FLASK_APP=app.py
+FLASK_ENV=development
+SECRET_KEY=your_secret_key
+DATABASE_URL=your_database_url
+
+
+### 5. Run Migrations (If applicable)
+If the project involves a database, set it up by running initial migrations:
+```bash
+flask db init
+flask db migrate
+flask db upgrade
+
+
+### 6. Start the Application
+Launch the Flask application. The application will be accessible at `http://127.0.0.1:5000`:
+```bash
+flask run
 
