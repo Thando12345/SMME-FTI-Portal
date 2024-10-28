@@ -125,7 +125,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form id="loanApplicationForm" method="POST" enctype="multipart/form-data">
+                <form id="loanApplicationForm" method="POST" enctype="multipart/form-data" action="/predict">
                     <div class="modal-body">
                         <input type="file" id="file" name="file" required class="form-control" placeholder="Upload Documents">
                         <small class="form-text text-muted">Upload financial statements and identification documents.</small>
@@ -138,6 +138,16 @@
             </div>
         </div>
     </div>
+
+    <!-- Display Predictions if available -->
+    {% if predictions %}
+    <section class="container mt-5">
+        <h2 class="text-center text-white">Predicted Credit Scores</h2>
+        <div class="table-responsive">
+            {{ predictions | safe }}
+        </div>
+    </section>
+    {% endif %}
 
     <!-- JavaScript for Role-Based Access Control -->
     <script>
@@ -164,12 +174,12 @@
                 document.getElementById('guest-section').style.display = 'block';
             }
         }
-        window.onload = displaySections;
+        window.onload = displaySections; // Initialize on load
     </script>
 
-    <!-- JavaScript Libraries -->
+    <!-- JS Libraries -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
